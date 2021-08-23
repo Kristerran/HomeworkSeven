@@ -1,0 +1,130 @@
+*{
+    font-family:oswold, Arial, Helvetica, sans-serif;
+}
+body{
+    padding-top: 14vh;
+}
+
+/* Header styling */
+header{
+    height: 15vh;
+    width: 100%;
+    position:fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    background-color: black;
+    border-bottom-left-radius: 10% ;
+    left: 0;
+}
+    #logo{
+    max-height: 90%;
+    margin-left: 2%;
+    margin-right: 2%
+}
+#logo > img{
+    object-fit: scale-down;
+
+}
+    #title{
+    text-transform: uppercase;
+    color: white;
+    text-align: center;
+}
+#externalLinks{
+    margin-left: auto;
+    margin-right: 5%;
+}
+/* main content */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+button{
+    border: none;
+    padding: 1rem 2rem;
+    margin: 0;
+    text-decoration: none;
+    background: none;
+    border-radius: 2% 15%;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+button:hover {
+    color: white;
+    background: black
+}
+#externalLinks > button{
+    color: white;
+
+}
+#externalLinks > button:hover {
+    color: black;
+    background: orangered
+}
+#mobileButton{
+    display: none;
+}
+#PageNavWrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+}
+.pageNav{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+ .card{
+     width: 60%;
+     margin: auto;
+     padding: 1%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid black;
+    box-shadow: 2px 4px orangered;
+    border-radius: 15% 2%;
+}
+#portrait{
+    width: 40%;
+}
+footer{
+    background-color: white;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 0;
+    border-top: 2px solid black;
+    border-radius: 10% 2%;
+}
+/* hides or shows content */
+.invisible{
+    display: none;
+}
+@media screen and (max-width: 700px){
+    #externalLinks{
+        display: none;
+    }
+    #mobileButton{
+        display: inherit;
+        color: white;
+        margin-left: auto;
+    }
+    #mobileButton:hover {
+        color: black;
+        background: orangered
+    }
+}
