@@ -12,21 +12,22 @@ header{
     position:fixed;
     top: 0;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content:left;
     background-color: black;
     border-bottom-left-radius: 10% ;
     left: 0;
 }
-    #logo{
-    max-height: 90%;
+ #logo{
+    height: 90%;
+    width:fit-content;
     margin-left: 2%;
     margin-right: 2%
 }
 #logo > img{
-    object-fit: scale-down;
-
-}
+        height: 100%;
+    }
     #title{
     text-transform: uppercase;
     color: white;
@@ -42,13 +43,19 @@ main{
     flex-direction: column;
     justify-content: center;
 }
+p{  
+    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
 button{
     border: none;
     padding: 1rem 2rem;
     margin: 0;
     text-decoration: none;
     background: none;
-    border-radius: 2% 15%;
+    border-radius: 0% 20%;
     cursor: pointer;
     text-align: center;
     transition: background 250ms ease-in-out, 
@@ -61,11 +68,23 @@ button:hover {
     color: white;
     background: black
 }
-#externalLinks > button{
+.linkButton{
+    border: none;
+     padding: 1rem 2rem;
+    /* margin: 15%; */
+    text-decoration: none;
+    background: none;
+    border-radius: 0% 20%;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     color: white;
 
 }
-#externalLinks > button:hover {
+.linkButton:hover {
     color: black;
     background: orangered
 }
@@ -86,13 +105,14 @@ button:hover {
  .card{
      width: 60%;
      margin: auto;
+     margin-bottom: 10%;
      padding: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 4px solid black;
     box-shadow: 2px 4px orangered;
-    border-radius: 15% 2%;
+    border-radius: 100px 0px;
 }
 #portrait{
     width: 40%;
@@ -108,23 +128,148 @@ footer{
     justify-content: flex-end;
     bottom: 0;
     border-top: 2px solid black;
-    border-radius: 10% 2%;
+    border-radius: 30% 0%;
+}
+#signiture{
+    font-size: 10px;
+    font-style: italic;
 }
 /* hides or shows content */
+
 .invisible{
     display: none;
 }
-@media screen and (max-width: 700px){
-    #externalLinks{
+#aboutMeCard > h2{
+    color: steelblue;
+}
+/* Portfolio section styling! */
+#portfolioCard{
+    padding: 5%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#portfolioCard > h2{
+    color: orangered;
+}
+#resumeCard{
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#resumeCard > h2{
+    color: seagreen;
+    flex-basis: 100%;
+    width: fit-content;
+}
+h4{
+margin: 1%;
+}
+h5{
+    margin: 1%;
+}
+.resumeSection{
+    border: 2px solid black;
+    width: 80%;
+    margin: 10%;
+    border-radius: 0px 30px;
+    padding:2%
+}
+.portfolioEl{
+    max-width: 80%;
+    border-radius: 10px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.portfolioEl > a > img{
+    width: 100%;
+}
+.label{
+    z-index: -1;
+    height: fit-content;
+    margin-top: 1%;
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 1px 2px orangered;
+    border-radius: 30% 0%;
+}
+.labelText{
+    font-size: 100%;
+    text-align: center;
+}
+
+@media screen and (max-width: 880px){
+    .mobileInvisible{
         display: none;
     }
+    .mobileVisible{
+        display:flex;
+    }
+    .card{
+        width: 90%
+    }
+    #externalLinks{
+        flex-basis: 100%;
+        margin-left: 70%;
+        width: 20% ;
+        height: 200px;
+        justify-content: space-evenly;
+        flex-direction: column;
+        background: black;
+    }
+
     #mobileButton{
+        font-size: 40px;
         display: inherit;
         color: white;
         margin-left: auto;
+        margin-right: 5%;
     }
     #mobileButton:hover {
         color: black;
         background: orangered
     }
+   
+    h1{
+        margin: 0;
+        font-size: 4vw;
+        width: fit-content;
+   } 
+   .card{
+    width: 100%
+}
+
+@media screen and (max-width: 300px){
+#title{
+    display: none;
+}
+header {
+    justify-content: center;
+}
+#logo{
+    margin-left: auto;
+}
+}
+/* scrollbar styling */
+/* scrollbar  */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #ffdddd;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: rgb(255, 176, 176);
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: orangered;
+  }
 }
